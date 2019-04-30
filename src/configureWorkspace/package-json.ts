@@ -1,5 +1,5 @@
-import vscode = require('vscode');
-import * as fs from 'fs';
+import vscode = require("vscode");
+import * as fs from "fs";
 
 export interface PackageJson {
   npmStart: boolean; //has npm start
@@ -14,20 +14,20 @@ async function getPackageJson(
   folder: vscode.WorkspaceFolder
 ): Promise<vscode.Uri[]> {
   return vscode.workspace.findFiles(
-    new vscode.RelativePattern(folder, 'package.json'),
+    new vscode.RelativePattern(folder, "package.json"),
     null,
-    1,
+    1
   );
 }
 
 export function getDefaultPackageJson(): PackageJson {
   return {
     npmStart: true,
-    fullCommand: 'npm start',
-    cmd: 'npm start',
-    author: 'author',
-    version: '0.0.1',
-    artifactName: ''
+    fullCommand: "npm start",
+    cmd: "npm start",
+    author: "author",
+    version: "0.0.1",
+    artifactName: ""
   };
 }
 
@@ -39,18 +39,18 @@ export async function readPackageJson(
   var pkg: PackageJson = getDefaultPackageJson(); //default
 
   if (uris && uris.length > 0) {
-    const json = JSON.parse(fs.readFileSync(uris[0].fsPath, 'utf8'));
+    const json = JSON.parse(fs.readFileSync(uris[0].fsPath, "utf8"));
 
     if (json.scripts && json.scripts.start) {
       pkg.npmStart = true;
       pkg.fullCommand = json.scripts.start;
-      pkg.cmd = 'npm start';
+      pkg.cmd = "npm start";
     } else if (json.main) {
       pkg.npmStart = false;
-      pkg.fullCommand = 'node' + ' ' + json.main;
+      pkg.fullCommand = "node" + " " + json.main;
       pkg.cmd = pkg.fullCommand;
     } else {
-      pkg.fullCommand = '';
+      pkg.fullCommand = "";
     }
 
     if (json.author) {

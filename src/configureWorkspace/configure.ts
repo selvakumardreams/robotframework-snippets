@@ -10,21 +10,21 @@ import {
 
 type WriterFunction = (port: string, folderToServe: string) => string;
 
-const FILE_TYPES: { [key: string]: WriterFunction }= {
-  'index.js': getSimpleExpressFile
+const FILE_TYPES: { [key: string]: WriterFunction } = {
+  "index.js": getSimpleExpressFile
 };
 
 const YES_PROMPT: vscode.MessageItem = {
-    title: "Yes",
-    isCloseAffordance: false
+  title: "Yes",
+  isCloseAffordance: false
 };
 
 const YES_OR_NO_PROMPTS: vscode.MessageItem[] = [
-    YES_PROMPT,
-    {
-        title: "No",
-        isCloseAffordance: true
-    }
+  YES_PROMPT,
+  {
+    title: "No",
+    isCloseAffordance: true
+  }
 ];
 
 export async function configure(): Promise<void> {
@@ -73,10 +73,15 @@ export async function configure(): Promise<void> {
     })
   );
 
-  async function createWorkspaceFileIfNotExists(fileName: string, writerFunction: WriterFunction) {
+  async function createWorkspaceFileIfNotExists(
+    fileName: string,
+    writerFunction: WriterFunction
+  ) {
     const workspacePath = path.join(folder.uri.fsPath, fileName);
     if (fs.existsSync(workspacePath)) {
-      const item: vscode.MessageItem | undefined = await vscode.window.showErrorMessage(
+      const item:
+        | vscode.MessageItem
+        | undefined = await vscode.window.showErrorMessage(
         `A ${fileName} already exists. Would you like to override it?`,
         ...YES_OR_NO_PROMPTS
       );
