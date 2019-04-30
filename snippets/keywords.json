@@ -1,0 +1,28 @@
+{
+    "RobotFramework Test": {
+        "prefix": "r-test",
+        "description": "RobotFramework test",
+        "body": [
+          "*** ${1:Settings} ***",
+          "Documentation\t${2:documentation}",
+          "...",
+          "...\t\t\t\tAuthor: ${3:author}",
+          "...\t\t\t\tDate: ${4:date}",
+          "",
+          "Library\t\t\t${5:../library}",
+          "",
+          "",
+          "*** Variables ***",
+          "",
+          "",
+          "*** Test Cases ***"
+        ]
+    },
+    "Input Text": {
+        "prefix": "Input Text",
+        "description": "Types the given text into text field identified by locator.",
+        "body": [
+          "Input Text\t${1:locator}\t${2:text}"
+        ]
+    }
+}
