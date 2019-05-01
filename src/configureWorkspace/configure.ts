@@ -54,13 +54,19 @@ export async function configure(): Promise<void> {
   const platformType = "Node.js";
 
   const port = await promptForPort();
-  if (!port) return;
+  if (!port) {
+    return;
+  }
 
   const folderToServe = await promptForFolderToServe();
-  if (!folderToServe) return;
+  if (!folderToServe) {
+    return;
+  }
 
   const nodeFileToSave = await promptForNodeExpressFile();
-  if (!nodeFileToSave) return;
+  if (!nodeFileToSave) {
+    return;
+  }
 
   const serviceName = path.basename(folder.uri.fsPath).toLowerCase();
 

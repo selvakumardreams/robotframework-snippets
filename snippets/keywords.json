@@ -1,28 +1,866 @@
 {
-    "RobotFramework Test": {
-        "prefix": "r-test",
-        "description": "RobotFramework test",
-        "body": [
-          "*** ${1:Settings} ***",
-          "Documentation\t${2:documentation}",
-          "...",
-          "...\t\t\t\tAuthor: ${3:author}",
-          "...\t\t\t\tDate: ${4:date}",
-          "",
-          "Library\t\t\t${5:../library}",
-          "",
-          "",
-          "*** Variables ***",
-          "",
-          "",
-          "*** Test Cases ***"
-        ]
-    },
-    "Input Text": {
-        "prefix": "Input Text",
-        "description": "Types the given text into text field identified by locator.",
-        "body": [
-          "Input Text\t${1:locator}\t${2:text}"
-        ]
-    }
+  "RobotFramework Test": {
+    "prefix": "r-test",
+    "description": "RobotFramework test",
+    "body": [
+      "*** ${1:Settings} ***",
+      "Documentation\t${2:documentation}",
+      "...",
+      "...\t\t\t\tAuthor: ${3:author}",
+      "...\t\t\t\tDate: ${4:date}",
+      "",
+      "Library\t\t\t${5:../library}",
+      "",
+      "",
+      "*** Variables ***",
+      "",
+      "",
+      "*** Test Cases ***"
+    ]
+  },
+  "Add Cookie": {
+    "prefix": "Add Cookie",
+    "description": "Adds a cookie to your current session.",
+    "body": ["Add Cookie  ${1:name}  ${2:value}"]
+  },
+  "Add Location Strategy": {
+    "prefix": "Add Location Strategy",
+    "description": "Adds a custom location strategy.",
+    "body": ["Add Location Strategy  ${1:strategy_name}  ${2:strategy_keyword}"]
+  },
+  "Alert Should Be Present": {
+    "prefix": "Alert Should Be Present",
+    "description": "Verifies that an alert is present and, by default, accepts it.",
+    "body": ["Alert Should Be Present  ${1:text}  ${2:action}"]
+  },
+  "Alert Should Not Be Present": {
+    "prefix": "Alert Should Not Be Present",
+    "description": "Verifies that no alert is present.",
+    "body": ["Alert Should Not Be Present  ${1:action}"]
+  },
+  "Assign Id To Element": {
+    "prefix": "Assign Id To Element",
+    "description": "Assigns temporary id to element specified by locator.",
+    "body": ["Assign Id To Element  ${1:locator}  ${2:id}"]
+  },
+  "Capture Element Screenshot": {
+    "prefix": "Capture Element Screenshot",
+    "description": "Captures screenshot from the element identified by locator and embeds it into log file.",
+    "body": ["Capture Element Screenshot  ${1:locator}  ${2:filename}"]
+  },
+  "Capture Page Screenshot": {
+    "prefix": "Capture Page Screenshot",
+    "description": "Takes screenshot of the current page and embeds it into log file.",
+    "body": ["Capture Page Screenshot  ${1:filename}"]
+  },
+  "Checkbox Should Be Selected": {
+    "prefix": "Checkbox Should Be Selected",
+    "description": "Verifies checkbox locator is selected/checked.",
+    "body": ["Checkbox Should Be Selected  ${1:locator}"]
+  },
+  "Checkbox Should Not Be Selected": {
+    "prefix": "Checkbox Should Not Be Selected",
+    "description": "Verifies checkbox locator is not selected/checked.",
+    "body": ["Checkbox Should Not Be Selected  ${1:locator}"]
+  },
+  "Choose File": {
+    "prefix": "Choose File",
+    "description": "Inputs the file_path into file input field locator.",
+    "body": ["Choose File  ${1:locator}  ${2:file_path}"]
+  },
+  "Clear Element Text": {
+    "prefix": "Clear Element Text",
+    "description": "Clears the value of text entry element identified by locator.",
+    "body": ["Clear Element Text  ${1:locator}"]
+  },
+  "Click Button": {
+    "prefix": "Click Button",
+    "description": "Clicks button identified by locator.",
+    "body": ["Click Button  ${1:locator}"]
+  },
+  "Click Element": {
+    "prefix": "Click Element",
+    "description": "Click element identified by locator",
+    "body": ["Click Element ${1:locator}"]
+  },
+  "Click Element At Coordinates": {
+    "prefix": "Click Element At Coordinates",
+    "description": "Click element locator at xoffset/yoffset.",
+    "body": ["Click Element At Coordinates  ${1:locator}  ${2:xoffset}  ${3:yoffset}"]
+  },
+  "Click Image": {
+    "prefix": "Click Image",
+    "description": "Clicks an image identified by locator.",
+    "body": ["Click Image  ${1:locator}"]
+  },
+  "Click Link": {
+    "prefix": "Click Link",
+    "description": "",
+    "body": [""]
+  },
+  "Close All Browsers": {
+    "prefix": "Close All Browsers",
+    "description": "",
+    "body": [""]
+  },
+  "Close Browser": {
+    "prefix": "Close Browser",
+    "description": "",
+    "body": [""]
+  },
+  "Close Window": {
+    "prefix": "Close Window",
+    "description": "",
+    "body": [""]
+  },
+  "Cover Element": {
+    "prefix": "Cover Element",
+    "description": "",
+    "body": [""]
+  },
+  "Create Webdriver": {
+    "prefix": "Create Webdriver",
+    "description": "",
+    "body": [""]
+  },
+  "Current Frame Should Contain": {
+    "prefix": "Current Frame Should Contain",
+    "description": "",
+    "body": [""]
+  },
+  "Current Frame Should Not Contain": {
+    "prefix": "Current Frame Should Not Contain",
+    "description": "",
+    "body": [""]
+  },
+  "Delete All Cookies": {
+    "prefix": "Delete All Cookies",
+    "description": "",
+    "body": [""]
+  },
+  "Delete Cookie": {
+    "prefix": "Delete Cookie",
+    "description": "",
+    "body": [""]
+  },
+  "Double Click Element": {
+    "prefix": "Double Click Element",
+    "description": "",
+    "body": [""]
+  },
+  "Drag And Drop": {
+    "prefix": "Drag And Drop",
+    "description": "",
+    "body": [""]
+  },
+  "Drag And Drop By Offset": {
+    "prefix": "Drag And Drop By Offset",
+    "description": "",
+    "body": [""]
+  },
+  "Element Attribute Value Should Be": {
+    "prefix": "Element Attribute Value Should Be",
+    "description": "",
+    "body": [""]
+  },
+  "Element Should Be Disabled": {
+    "prefix": "Element Should Be Disabled",
+    "description": "",
+    "body": [""]
+  },
+  "Element Should Be Enabled": {
+    "prefix": "Element Should Be Enabled",
+    "description": "",
+    "body": [""]
+  },
+  "Element Should Be Focused": {
+    "prefix": "Element Should Be Focused",
+    "description": "",
+    "body": [""]
+  },
+  "Element Should Be Visible": {
+    "prefix": "Element Should Be Visible",
+    "description": "",
+    "body": [""]
+  },
+  "Element Should Contain": {
+    "prefix": "Element Should Contain",
+    "description": "",
+    "body": [""]
+  },
+  "Element Should Not Be Visible": {
+    "prefix": "Element Should Not Be Visible",
+    "description": "",
+    "body": [""]
+  },
+  "Element Should Not Contain": {
+    "prefix": "Element Should Not Contain",
+    "description": "",
+    "body": [""]
+  },
+  "Element Text Should Be ": {
+    "prefix": "Element Text Should Be ",
+    "description": "",
+    "body": [""]
+  },
+  "Element Text Should Not Be ": {
+    "prefix": "Element Text Should Not Be ",
+    "description": "",
+    "body": [""]
+  },
+  "Execute Async Javascript ": {
+    "prefix": "Execute Async Javascript ",
+    "description": "",
+    "body": [""]
+  },
+  "Execute Javascript": {
+    "prefix": "Execute Javascript",
+    "description": "",
+    "body": [""]
+  },
+  "Frame Should Contain ": {
+    "prefix": "Frame Should Contain",
+    "description": "",
+    "body": [""]
+  },
+  "Get All Links ": {
+    "prefix": "Get All Links ",
+    "description": "",
+    "body": [""]
+  },
+  "Get Cookie": {
+    "prefix": "Get Cookie",
+    "description": "",
+    "body": [""]
+  },
+  "Get Cookies": {
+    "prefix": "Get Cookies",
+    "description": "",
+    "body": [""]
+  },
+  "Get Element Attribute": {
+    "prefix": "Get Element Attribute",
+    "description": "",
+    "body": [""]
+  },
+  "Get Element Count": {
+    "prefix": "Get Element Count",
+    "description": "",
+    "body": [""]
+  },
+  "Get Element Size": {
+    "prefix": "Get Element Size",
+    "description": "",
+    "body": [""]
+  },
+  "Get Horizontal Position": {
+    "prefix": "Get Horizontal Position",
+    "description": "",
+    "body": [""]
+  },
+  "Get List Items": {
+    "prefix": "Get List Items",
+    "description": "",
+    "body": [""]
+  },
+  "Get Location": {
+    "prefix": "Get Location",
+    "description": "",
+    "body": [""]
+  },
+  "Get Locations": {
+    "prefix": "Get Locations",
+    "description": "",
+    "body": [""]
+  },
+  "Get Selected List Label": {
+    "prefix": "Get Selected List Label",
+    "description": "",
+    "body": [""]
+  },
+  "Get Selected List Labels": {
+    "prefix": "Get Selected List Labels",
+    "description": "",
+    "body": [""]
+  },
+  "Get Selected List Value": {
+    "prefix": "Get Selected List Value",
+    "description": "",
+    "body": [""]
+  },
+  "Get Selected List Values": {
+    "prefix": "Get Selected List Values",
+    "description": "",
+    "body": [""]
+  },
+  "Get Selenium Implicit Wait": {
+    "prefix": "Get Selenium Implicit Wait",
+    "description": "",
+    "body": [""]
+  },
+  "Get Selenium Speed": {
+    "prefix": "Get Selenium Speed",
+    "description": "",
+    "body": [""]
+  },
+  "Get Selenium Timeout": {
+    "prefix": "Get Selenium Timeout",
+    "description": "",
+    "body": [""]
+  },
+  "Get Session Id": {
+    "prefix": "Get Session Id",
+    "description": "",
+    "body": [""]
+  },
+  "Get Source": {
+    "prefix": "Get Source",
+    "description": "",
+    "body": [""]
+  },
+  "Get Table Cell": {
+    "prefix": "Get Table Cell",
+    "description": "",
+    "body": [""]
+  },
+  "Get Text": {
+    "prefix": "Get Text",
+    "description": "",
+    "body": [""]
+  },
+  "Get Title": {
+    "prefix": "Get Title",
+    "description": "",
+    "body": [""]
+  },
+  "Get Value": {
+    "prefix": "Get Value",
+    "description": "",
+    "body": [""]
+  },
+  "Get Vertical Position": {
+    "prefix": "Get Vertical Position",
+    "description": "",
+    "body": [""]
+  },
+  "Get WebElement": {
+    "prefix": "Get WebElement",
+    "description": "",
+    "body": [""]
+  },
+  "Get WebElements": {
+    "prefix": "Get WebElements",
+    "description": "",
+    "body": [""]
+  },
+  "Get Window Handles": {
+    "prefix": "Get Window Handles",
+    "description": "",
+    "body": [""]
+  },
+  "Get Window Identifiers": {
+    "prefix": "Get Window Identifiers",
+    "description": "",
+    "body": [""]
+  },
+  "Get Window Names": {
+    "prefix": "Get Window Names",
+    "description": "",
+    "body": [""]
+  },
+  "Get Window Position": {
+    "prefix": "Get Window Position",
+    "description": "",
+    "body": [""]
+  },
+  "Get Window Size": {
+    "prefix": "Get Window Size",
+    "description": "",
+    "body": [""]
+  },
+  "Get Window Titles": {
+    "prefix": "Get Window Titles",
+    "description": "",
+    "body": [""]
+  },
+  "Go Back": {
+    "prefix": "Go Back",
+    "description": "",
+    "body": [""]
+  },
+  "Go To": {
+    "prefix": "Go To",
+    "description": "",
+    "body": [""]
+  },
+  "Handle Alert": {
+    "prefix": "Handle Alert",
+    "description": "",
+    "body": [""]
+  },
+  "Input Password": {
+    "prefix": "Input Password",
+    "description": "",
+    "body": [""]
+  },
+  "Input Text": {
+    "prefix": "Input Text",
+    "description": "",
+    "body": [""]
+  },
+  "Input Text Into Alert": {
+    "prefix": "Input Text Into Alert",
+    "description": "",
+    "body": [""]
+  },
+  "List Selection Should Be": {
+    "prefix": "List Selection Should Be",
+    "description": "",
+    "body": [""]
+  },
+  "List Should Have No Selections": {
+    "prefix": "List Should Have No Selections",
+    "description": "",
+    "body": [""]
+  },
+  "Location Should Be": {
+    "prefix": "Location Should Be",
+    "description": "",
+    "body": [""]
+  },
+  "Location Should Contain": {
+    "prefix": "Location Should Contain",
+    "description": "",
+    "body": [""]
+  },
+  "Locator Should Match X Times": {
+    "prefix": "Locator Should Match X Times",
+    "description": "",
+    "body": [""]
+  },
+  "Log Location": {
+    "prefix": "Log Location",
+    "description": "",
+    "body": [""]
+  },
+  "Log Source": {
+    "prefix": "Log Source",
+    "description": "",
+    "body": [""]
+  },
+  "Log Title": {
+    "prefix": "Log Title",
+    "description": "",
+    "body": [""]
+  },
+  "Maximize Browser Window": {
+    "prefix": "Maximize Browser Window",
+    "description": "",
+    "body": [""]
+  },
+  "Mouse Down": {
+    "prefix": "Mouse Down",
+    "description": "",
+    "body": [""]
+  },
+  "Mouse Down On Image": {
+    "prefix": "Mouse Down On Image",
+    "description": "",
+    "body": [""]
+  },
+  "Mouse Down On Link": {
+    "prefix": "Mouse Down On Link",
+    "description": "",
+    "body": [""]
+  },
+  "Mouse Out": {
+    "prefix": "Mouse Out",
+    "description": "",
+    "body": [""]
+  },
+  "Mouse Over": {
+    "prefix": "Mouse Over",
+    "description": "",
+    "body": [""]
+  },
+  "Mouse Up": {
+    "prefix": "Mouse Up",
+    "description": "",
+    "body": [""]
+  },
+  "Open Browser": {
+    "prefix": "Open Browser",
+    "description": "",
+    "body": ["Open Browser  ${1:url}  ${2:chrome}"]
+  },
+  "Open Context Menu": {
+    "prefix": "Open Context Menu",
+    "description": "",
+    "body": [""]
+  },
+  "Page Should Contain": {
+    "prefix": "Page Should Contain",
+    "description": "",
+    "body": [""]
+  },
+  "Page Should Contain Button": {
+    "prefix": "Page Should Contain Button",
+    "description": "",
+    "body": [""]
+  },
+  "Page Should Contain Checkbox": {
+    "prefix": "Page Should Contain Checkbox",
+    "description": "",
+    "body": [""]
+  },
+  "Page Should Contain Element": {
+    "prefix": "Page Should Contain Element",
+    "description": "",
+    "body": [""]
+  },
+  "Page Should Contain Image": {
+    "prefix": "Page Should Contain Image",
+    "description": "",
+    "body": [""]
+  },
+  "Page Should Contain Link": {
+    "prefix": "Page Should Contain Link",
+    "description": "",
+    "body": [""]
+  },
+  "Page Should Contain List": {
+    "prefix": "Page Should Contain List",
+    "description": "",
+    "body": [""]
+  },
+  "Page Should Contain Radio Button": {
+    "prefix": "Page Should Contain Radio Button",
+    "description": "",
+    "body": [""]
+  },
+  "Page Should Contain Textfield": {
+    "prefix": "Page Should Contain Textfield",
+    "description": "",
+    "body": [""]
+  },
+  "Page Should Not Contain": {
+    "prefix": "Page Should Not Contain",
+    "description": "",
+    "body": [""]
+  },
+  "Page Should Not Contain Button": {
+    "prefix": "Page Should Not Contain Button",
+    "description": "",
+    "body": [""]
+  },
+  "Page Should Not Contain Checkbox": {
+    "prefix": "Page Should Not Contain Checkbox",
+    "description": "",
+    "body": [""]
+  },
+  "Page Should Not Contain Element": {
+    "prefix": "Page Should Not Contain Element",
+    "description": "",
+    "body": [""]
+  },
+  "Page Should Not Contain Image": {
+    "prefix": "Page Should Not Contain Image",
+    "description": "",
+    "body": [""]
+  },
+  "Page Should Not Contain Link": {
+    "prefix": "Page Should Not Contain Link",
+    "description": "",
+    "body": [""]
+  },
+  "Page Should Not Contain List": {
+    "prefix": "Page Should Not Contain List",
+    "description": "",
+    "body": [""]
+  },
+  "Page Should Not Contain Radio Button": {
+    "prefix": "Page Should Not Contain Radio Button",
+    "description": "",
+    "body": [""]
+  },
+  "Page Should Not Contain Textfield": {
+    "prefix": "Page Should Not Contain Textfield",
+    "description": "",
+    "body": [""]
+  },
+  "Press Key": {
+    "prefix": "Press Key",
+    "description": "",
+    "body": [""]
+  },
+  "Press Keys": {
+    "prefix": "Press Keys",
+    "description": "",
+    "body": [""]
+  },
+  "Radio Button Should Be Set To": {
+    "prefix": "Radio Button Should Be Set To",
+    "description": "",
+    "body": [""]
+  },
+  "Radio Button Should Not Be Selected": {
+    "prefix": "Radio Button Should Not Be Selected",
+    "description": "",
+    "body": [""]
+  },
+  "Register Keyword To Run On Failure": {
+    "prefix": "Register Keyword To Run On Failure",
+    "description": "",
+    "body": [""]
+  },
+  "Reload Page": {
+    "prefix": "Reload Page",
+    "description": "",
+    "body": [""]
+  },
+  "Remove Location Strategy": {
+    "prefix": "Remove Location Strategy",
+    "description": "",
+    "body": [""]
+  },
+  "Scroll Element Into View": {
+    "prefix": "Scroll Element Into View",
+    "description": "",
+    "body": [""]
+  },
+  "Select All From List": {
+    "prefix": "Select All From List",
+    "description": "",
+    "body": [""]
+  },
+  "Select Checkbox": {
+    "prefix": "Select Checkbox",
+    "description": "",
+    "body": [""]
+  },
+  "Select Frame": {
+    "prefix": "Select Frame",
+    "description": "",
+    "body": [""]
+  },
+  "Select From List By Index": {
+    "prefix": "Select From List By Index",
+    "description": "",
+    "body": [""]
+  },
+  "Select From List By Label": {
+    "prefix": "Select From List By Label",
+    "description": "",
+    "body": [""]
+  },
+  "Select From List By Value": {
+    "prefix": "Select From List By Value",
+    "description": "",
+    "body": [""]
+  },
+  "Select Window": {
+    "prefix": "Select Window",
+    "description": "",
+    "body": [""]
+  },
+  "Set Browser Implicit Wait": {
+    "prefix": "Set Browser Implicit Wait",
+    "description": "",
+    "body": [""]
+  },
+  "Set Focus To Element": {
+    "prefix": "Set Focus To Element",
+    "description": "",
+    "body": [""]
+  },
+  "Set Screenshot Directory": {
+    "prefix": "Set Screenshot Directory",
+    "description": "",
+    "body": [""]
+  },
+  "Set Selenium Implicit Wait": {
+    "prefix": "Set Selenium Implicit Wait",
+    "description": "",
+    "body": [""]
+  },
+  "Set Selenium Speed": {
+    "prefix": "Set Selenium Speed",
+    "description": "",
+    "body": [""]
+  },
+  "Set Selenium Timeout": {
+    "prefix": "Set Selenium Timeout",
+    "description": "",
+    "body": [""]
+  },
+  "Set Window Position": {
+    "prefix": "Set Window Position",
+    "description": "",
+    "body": [""]
+  },
+  "Set Window Size": {
+    "prefix": "Set Window Size",
+    "description": "",
+    "body": [""]
+  },
+  "Simulate Event": {
+    "prefix": "Simulate Event",
+    "description": "",
+    "body": [""]
+  },
+  "Submit Form": {
+    "prefix": "Submit Form",
+    "description": "",
+    "body": [""]
+  },
+  "Switch Browser": {
+    "prefix": "Switch Browser",
+    "description": "",
+    "body": [""]
+  },
+  "Table Cell Should Contain": {
+    "prefix": "Table Cell Should Contain",
+    "description": "",
+    "body": [""]
+  },
+  "Table Column Should Contain": {
+    "prefix": "Table Column Should Contain",
+    "description": "",
+    "body": [""]
+  },
+  "Table Footer Should Contain": {
+    "prefix": "Table Footer Should Contain",
+    "description": "",
+    "body": [""]
+  },
+  "Table Header Should Contain": {
+    "prefix": "Table Header Should Contain",
+    "description": "",
+    "body": [""]
+  },
+  "Table Row Should Contain": {
+    "prefix": "Table Row Should Contain",
+    "description": "",
+    "body": [""]
+  },
+  "Table Should Contain": {
+    "prefix": "Table Should Contain",
+    "description": "",
+    "body": [""]
+  },
+  "Textarea Should Contain": {
+    "prefix": "Textarea Should Contain",
+    "description": "",
+    "body": [""]
+  },
+  "Textarea Value Should Be": {
+    "prefix": "Textarea Value Should Be",
+    "description": "",
+    "body": [""]
+  },
+  "Textfield Should Contain": {
+    "prefix": "Textfield Should Contain",
+    "description": "",
+    "body": [""]
+  },
+  "Textfield Value Should Be": {
+    "prefix": "Textfield Value Should Be",
+    "description": "",
+    "body": [""]
+  },
+  "Title Should Be": {
+    "prefix": "Title Should Be",
+    "description": "",
+    "body": [""]
+  },
+  "Unselect All From List": {
+    "prefix": "Unselect All From List",
+    "description": "",
+    "body": [""]
+  },
+  "Unselect Checkbox": {
+    "prefix": "Unselect Checkbox",
+    "description": "",
+    "body": [""]
+  },
+  "Unselect Frame": {
+    "prefix": "Unselect Frame",
+    "description": "",
+    "body": [""]
+  },
+  "Unselect From List By Index": {
+    "prefix": "Unselect From List By Index",
+    "description": "",
+    "body": [""]
+  },
+  "Unselect From List By Label": {
+    "prefix": "Unselect From List By Label",
+    "description": "",
+    "body": [""]
+  },
+  "Unselect From List By Value": {
+    "prefix": "Unselect From List By Value",
+    "description": "",
+    "body": [""]
+  },
+  "Wait For Condition": {
+    "prefix": "Wait For Condition",
+    "description": "",
+    "body": [""]
+  },
+  "Wait Until Element Contains": {
+    "prefix": "Wait Until Element Contains",
+    "description": "",
+    "body": [""]
+  },
+  "Wait Until Element Does Not Contain": {
+    "prefix": "Wait Until Element Does Not Contain",
+    "description": "",
+    "body": [""]
+  },
+  "Wait Until Element Is Enabled": {
+    "prefix": "Wait Until Element Is Enabled",
+    "description": "",
+    "body": [""]
+  },
+  "Wait Until Element Is Not Visible": {
+    "prefix": "Wait Until Element Is Not Visible",
+    "description": "",
+    "body": [""]
+  },
+  "Wait Until Element Is Visible": {
+    "prefix": "Wait Until Element Is Visible",
+    "description": "",
+    "body": [""]
+  },
+  "Wait Until Location Contains": {
+    "prefix": "Wait Until Location Contains",
+    "description": "",
+    "body": [""]
+  },
+  "Wait Until Location Is": {
+    "prefix": "Wait Until Location Is",
+    "description": "",
+    "body": [""]
+  },
+  "Wait Until Page Contains": {
+    "prefix": "Wait Until Page Contains",
+    "description": "",
+    "body": [""]
+  },
+  "Wait Until Page Contains Element": {
+    "prefix": "Wait Until Page Contains Element",
+    "description": "",
+    "body": [""]
+  },
+  "Wait Until Page Does Not Contain": {
+    "prefix": "Wait Until Page Does Not Contain",
+    "description": "",
+    "body": [""]
+  },
+  "Wait Until Page Does Not Contain Element": {
+    "prefix": "Wait Until Page Does Not Contain Element",
+    "description": "",
+    "body": [""]
+  }
 }
