@@ -1,5 +1,6 @@
 {
 	"name": "robotframework-snippets",
+	"publisher": "selvakumardreams",
 	"displayName": "robotframework-snippets",
 	"description": "robotframework snippers for VS Code",
 	"version": "0.0.1",
